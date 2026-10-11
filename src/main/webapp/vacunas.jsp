@@ -1,0 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %><%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Vacunas</title></head><body><h1>Catálogo e inventario de vacunas</h1><a href="${pageContext.request.contextPath}/">Inicio</a>
+<form method="post" action="${pageContext.request.contextPath}/vacunas"><label>Nombre <input name="nombre" required maxlength="100"></label><label>Fabricante <input name="fabricante" maxlength="100"></label><label>Dosis disponibles <input name="dosis" type="number" min="0" required></label><button>Registrar / actualizar</button></form>
+<table border="1"><tr><th>Vacuna</th><th>Fabricante</th><th>Dosis disponibles</th></tr><c:forEach var="v" items="${vacunas}"><tr><td><c:out value="${v.nombre}"/></td><td><c:out value="${v.fabricante}"/></td><td><c:out value="${v.dosisDisponibles}"/></td></tr></c:forEach></table></body></html>

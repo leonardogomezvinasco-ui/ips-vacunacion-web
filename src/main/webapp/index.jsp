@@ -15,6 +15,12 @@
 
     <p>Aplicación web para la gestión de citas de vacunación.</p>
 
+    <nav>
+        <a href="pacientes">Gestión de pacientes</a> |
+        <a href="citas">Agendamiento de citas</a> |
+        <a href="vacunas">Catálogo de vacunas</a>
+    </nav>
+
     <hr>
 
     <p>Proyecto desarrollado como evidencia del programa ADSO - SENA.</p>
