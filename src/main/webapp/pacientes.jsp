@@ -8,146 +8,27 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Gestión de Pacientes - IPS Preventiva Farallones</title>
-
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .contenedor {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h1 {
-            color: #1f4e79;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            color: #555;
-            font-size: 20px;
-            margin-top: 0;
-        }
-
-        .tarjeta {
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .formulario {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .campo {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .campo label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .campo input,
-        .campo select {
-            padding: 9px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .campo-completo {
-            grid-column: span 3;
-        }
-
-        .boton {
-            background-color: #1f4e79;
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .boton:hover {
-            background-color: #163a5c;
-        }
-
-        .tabla-contenedor {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        th {
-            background-color: #1f4e79;
-            color: white;
-            padding: 10px;
-            text-align: left;
-        }
-
-        td {
-            padding: 9px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .boton-eliminar {
-            background-color: #b02a37;
-            color: white;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .boton-eliminar:hover {
-            background-color: #842029;
-        }
-
-        .sin-registros {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-        }
-
-        .pie {
-            margin-top: 25px;
-            text-align: center;
-            color: #777;
-            font-size: 13px;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 
 <body>
 
 <div class="contenedor">
 
-    <h1>IPS Preventiva Farallones</h1>
+    <header class="encabezado">
+        <h1>IPS Preventiva Farallones</h1>
+        <h2>Sistema de Agendamiento de Citas</h2>
+    </header>
 
-    <h2>Sistema de Agendamiento de Citas</h2>
+    <nav class="navegacion" aria-label="Navegación principal">
+        <a href="${pageContext.request.contextPath}/">Inicio</a>
+        <a class="activo" href="${pageContext.request.contextPath}/pacientes">Pacientes</a>
+        <a href="${pageContext.request.contextPath}/citas">Citas</a>
+        <a href="${pageContext.request.contextPath}/vacunas">Vacunas</a>
+    </nav>
 
     <!-- FORMULARIO DE REGISTRO -->
 
@@ -286,7 +167,7 @@
                         Consentimiento
                     </label>
 
-                    <label>
+                    <label class="checkbox-line">
 
                         <input type="checkbox"
                                name="consentimiento"

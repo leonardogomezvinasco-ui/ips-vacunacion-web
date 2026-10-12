@@ -140,7 +140,7 @@ La autenticación, autorización y despliegue público no hacen parte del alcanc
 
 | Capa | Componentes del proyecto | Tecnología o librería | Función |
 |---|---|---|---|
-| Presentación | JSP: `index.jsp`, `pacientes.jsp`, `citas.jsp`, `vacunas.jsp` | JSP y Jakarta JSTL 3.0 | Mostrar formularios, listados y resultados |
+| Presentación | JSP: `index.jsp`, `pacientes.jsp`, `citas.jsp`, `vacunas.jsp`; `css/estilos.css` | JSP, Jakarta JSTL 3.0 y CSS | Mostrar formularios, listados y navegación con estilo compartido y adaptable |
 | Control web | Servlets de pacientes, citas y vacunas | Jakarta Servlet API 6.0 | Recibir solicitudes, llamar servicios/DAO y elegir la respuesta |
 | Reglas de aplicación | `ValidadorCita`, `ValidadorVacuna` | Java 17 | Validar fechas, estados, nombres y cantidades |
 | Acceso a datos | `PacienteDAO`, `CitaDAO`, `VacunaDAO`, `ConexionBD` | JDBC y MySQL Connector/J 9.4 | Ejecutar consultas preparadas y administrar conexiones |

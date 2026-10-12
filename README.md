@@ -8,6 +8,10 @@ Proyecto académico ADSO SENA para gestionar pacientes, citas de vacunación y u
 - **Citas:** agenda futura para un paciente y permite cambiar su estado.
 - **Vacunas:** registra fabricante y dosis disponibles; el nombre identifica cada vacuna.
 
+## Interfaz
+
+Las páginas JSP comparten el estilo definido en `src/main/webapp/css/estilos.css`. La paleta azul, las tarjetas, formularios, tablas y navegación toman como referencia la interfaz del módulo de pacientes desarrollado anteriormente. El diseño se adapta a pantallas pequeñas y conserva los formularios conectados con sus Servlets.
+
 ## Tecnologías
 
 Java 17, Maven, Jakarta Servlet/JSP, JSTL, JDBC, MySQL y Apache Tomcat 10.1.
