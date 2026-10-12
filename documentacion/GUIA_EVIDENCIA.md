@@ -90,6 +90,7 @@ Ambiente reportado durante la ejecución: Windows 11, Java 26.0.2.1, Maven 3.9.1
 | Agendar cita futura | Asociar paciente, vacuna, fecha y estado inicial | La cita apareció con estado `Programada` | Aprobada |
 | Cambiar estado de la cita | Guardar y mostrar el estado seleccionado | El usuario confirmó cambio a `Cancelada` | Aprobada |
 | Reiniciar Tomcat | Volver a cargar los datos ya almacenados | El usuario confirmó que la vacuna y la cita continuaron en pantalla después del reinicio | Aprobada |
+| Verificación tras reiniciar servicios | Abrir `/citas` y `/vacunas` y consultar sus registros | El usuario confirmó que ambas páginas cargaron sin errores y mostraron la información registrada | Aprobada |
 
 Las capturas del navegador compartidas durante la sesión sirven como evidencia visual. La cita y el paciente son datos ficticios de prueba. La aplicación no tiene una función web para eliminar citas; si se desea limpiar los datos de prueba, hacerlo desde MySQL teniendo en cuenta primero borrar la cita para respetar la llave foránea.
 
