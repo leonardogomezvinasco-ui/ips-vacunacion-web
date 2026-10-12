@@ -42,3 +42,5 @@ Copiar el WAR a la carpeta `webapps` de Apache Tomcat 10.1 y abrir `http://local
 ## Documentación de la evidencia
 
 Consultar [`documentacion/GUIA_EVIDENCIA.md`](documentacion/GUIA_EVIDENCIA.md) para la arquitectura, historias de usuario, pruebas manuales, resultados unitarios y pasos de instalación.
+
+El informe escrito de la evidencia, con anexos de capturas, se encuentra en `documentacion/Informe_GA8-220501096-AA1-EV01.docx`.
