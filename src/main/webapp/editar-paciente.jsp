@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,11 +20,14 @@
         <a class="activo" href="${pageContext.request.contextPath}/pacientes">Pacientes</a>
         <a href="${pageContext.request.contextPath}/citas">Citas</a>
         <a href="${pageContext.request.contextPath}/vacunas">Vacunas</a>
+        <c:if test="${usuarioActual.rol == 'ADMINISTRADOR'}"><a href="${pageContext.request.contextPath}/personal">Personal</a><a href="${pageContext.request.contextPath}/usuarios">Usuarios</a><a href="${pageContext.request.contextPath}/registro-vacunacion">Vacunaciones</a></c:if>
+        <a href="${pageContext.request.contextPath}/logout">Cerrar sesión</a>
     </nav>
 
     <section class="tarjeta">
         <a class="enlace-volver" href="${pageContext.request.contextPath}/pacientes">← Volver a pacientes</a>
         <form action="${pageContext.request.contextPath}/editar-paciente" method="post" class="formulario formulario-uno">
+            <input type="hidden" name="csrfToken" value="${csrfToken}">
             <input type="hidden" name="idPaciente" value="${paciente.idPaciente}">
 
             <div class="campo">

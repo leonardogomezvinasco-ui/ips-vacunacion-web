@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="co.edu.sena.ipsvacunacionweb.modelo.Paciente" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,6 +29,8 @@
         <a class="activo" href="${pageContext.request.contextPath}/pacientes">Pacientes</a>
         <a href="${pageContext.request.contextPath}/citas">Citas</a>
         <a href="${pageContext.request.contextPath}/vacunas">Vacunas</a>
+        <c:if test="${usuarioActual.rol == 'ADMINISTRADOR'}"><a href="${pageContext.request.contextPath}/personal">Personal</a><a href="${pageContext.request.contextPath}/usuarios">Usuarios</a><a href="${pageContext.request.contextPath}/registro-vacunacion">Vacunaciones</a></c:if>
+        <a href="${pageContext.request.contextPath}/logout">Cerrar sesión</a>
     </nav>
 
     <!-- FORMULARIO DE REGISTRO -->
@@ -38,6 +41,8 @@
 
         <form method="post"
               action="${pageContext.request.contextPath}/pacientes">
+
+            <input type="hidden" name="csrfToken" value="${csrfToken}">
 
             <input type="hidden"
                    name="accion"
@@ -300,6 +305,8 @@
 
                         <form method="post"
                               action="${pageContext.request.contextPath}/pacientes">
+
+                            <input type="hidden" name="csrfToken" value="${csrfToken}">
 
                             <input type="hidden"
                                    name="accion"

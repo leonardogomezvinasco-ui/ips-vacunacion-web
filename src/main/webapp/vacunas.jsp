@@ -20,12 +20,15 @@
         <a href="${pageContext.request.contextPath}/pacientes">Pacientes</a>
         <a href="${pageContext.request.contextPath}/citas">Citas</a>
         <a class="activo" href="${pageContext.request.contextPath}/vacunas">Vacunas</a>
+        <c:if test="${usuarioActual.rol == 'ADMINISTRADOR'}"><a href="${pageContext.request.contextPath}/personal">Personal</a><a href="${pageContext.request.contextPath}/usuarios">Usuarios</a><a href="${pageContext.request.contextPath}/registro-vacunacion">Vacunaciones</a></c:if>
+        <a href="${pageContext.request.contextPath}/logout">Cerrar sesión</a>
     </nav>
 
     <section class="tarjeta">
         <h2>Registrar o actualizar vacuna</h2>
         <p class="texto-intro">Registra el nombre, fabricante y cantidad disponible en el inventario.</p>
         <form method="post" action="${pageContext.request.contextPath}/vacunas" class="formulario">
+            <input type="hidden" name="csrfToken" value="${csrfToken}">
             <div class="campo">
                 <label for="nombre">Nombre de la vacuna</label>
                 <input id="nombre" name="nombre" required maxlength="100" placeholder="Ej. Influenza">

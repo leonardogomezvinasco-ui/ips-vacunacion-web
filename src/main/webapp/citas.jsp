@@ -20,6 +20,8 @@
         <a href="${pageContext.request.contextPath}/pacientes">Pacientes</a>
         <a class="activo" href="${pageContext.request.contextPath}/citas">Citas</a>
         <a href="${pageContext.request.contextPath}/vacunas">Vacunas</a>
+        <c:if test="${usuarioActual.rol == 'ADMINISTRADOR'}"><a href="${pageContext.request.contextPath}/personal">Personal</a><a href="${pageContext.request.contextPath}/usuarios">Usuarios</a><a href="${pageContext.request.contextPath}/registro-vacunacion">Vacunaciones</a></c:if>
+        <a href="${pageContext.request.contextPath}/logout">Cerrar sesión</a>
     </nav>
 
     <section class="tarjeta">
@@ -28,6 +30,7 @@
         <form method="post" action="${pageContext.request.contextPath}/citas" class="formulario">
             <div class="campo">
                 <label for="idPaciente">Paciente</label>
+                <input type="hidden" name="csrfToken" value="${csrfToken}">
                 <select id="idPaciente" name="idPaciente" required>
                     <option value="">Seleccione un paciente</option>
                     <c:forEach var="paciente" items="${pacientes}">
@@ -36,8 +39,8 @@
                 </select>
             </div>
             <div class="campo">
-                <label for="vacuna">Vacuna</label>
-                <input id="vacuna" name="vacuna" maxlength="100" required placeholder="Ej. Influenza">
+                <label for="idVacuna">Vacuna del catálogo</label>
+                <select id="idVacuna" name="idVacuna" required><option value="">Seleccione una vacuna</option><c:forEach var="vacuna" items="${vacunas}"><option value="${vacuna.idVacuna}"><c:out value="${vacuna.nombre}"/> — <c:out value="${vacuna.dosisDisponibles}"/> dosis</option></c:forEach></select>
             </div>
             <div class="campo">
                 <label for="fechaHora">Fecha y hora</label>
@@ -66,6 +69,7 @@
                                 <td><span class="estado"><c:out value="${cita.estado}"/></span></td>
                                 <td>
                                     <form method="post" action="${pageContext.request.contextPath}/citas" class="acciones">
+                                        <input type="hidden" name="csrfToken" value="${csrfToken}">
                                         <input type="hidden" name="accion" value="estado">
                                         <input type="hidden" name="idCita" value="${cita.idCita}">
                                         <label class="sr-only" for="estado-${cita.idCita}">Estado de la cita</label>

@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 public class Cita {
     private int idCita;
     private int idPaciente;
+    private int idVacuna;
+    private int dosisDisponibles;
     private String paciente;
     private String vacuna;
     private LocalDateTime fechaHora;
@@ -14,6 +16,10 @@ public class Cita {
     public void setIdCita(int idCita) { this.idCita = idCita; }
     public int getIdPaciente() { return idPaciente; }
     public void setIdPaciente(int idPaciente) { this.idPaciente = idPaciente; }
+    public int getIdVacuna() { return idVacuna; }
+    public void setIdVacuna(int idVacuna) { this.idVacuna = idVacuna; }
+    public int getDosisDisponibles() { return dosisDisponibles; }
+    public void setDosisDisponibles(int dosisDisponibles) { this.dosisDisponibles = dosisDisponibles; }
     public String getPaciente() { return paciente; }
     public void setPaciente(String paciente) { this.paciente = paciente; }
     public String getVacuna() { return vacuna; }

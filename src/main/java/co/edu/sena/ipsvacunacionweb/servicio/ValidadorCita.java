@@ -29,4 +29,11 @@ public final class ValidadorCita {
             throw new IllegalArgumentException("Estado no válido");
         }
     }
+
+    public static void validarNuevaCita(int idPaciente, int idVacuna,
+                                        LocalDateTime fechaHora, LocalDateTime ahora) {
+        if(idPaciente<=0) throw new IllegalArgumentException("Seleccione un paciente válido");
+        if(idVacuna<=0) throw new IllegalArgumentException("Seleccione una vacuna del catálogo");
+        if(fechaHora==null||ahora==null||!fechaHora.isAfter(ahora)) throw new IllegalArgumentException("La fecha de la cita debe ser futura");
+    }
 }
